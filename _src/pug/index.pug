@@ -3,5 +3,8 @@ extends layout/_default
 append ConfigBlock
   - page_name = ''
 
+prepend JavascriptBlock
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r81/three.min.js")
+
 block ContentBlock
-  h1= title
+  div#canvas-container

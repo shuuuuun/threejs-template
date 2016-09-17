@@ -1,9 +1,8 @@
-// import $ from 'jquery';
-// import { EventEmitter2 } from 'eventemitter2';
-// import Util from './Util';
+import Sample from './modules/Sample';
 
-// export default class Main extends EventEmitter2 {
-//   constructor(opts = {}) {
-//     super();
-//   }
-// }
+(() => {
+  const sample = new Sample({
+    container: document.getElementById('canvas-container'),
+  });
+  sample.start();
+})();
