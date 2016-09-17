@@ -5,8 +5,8 @@ export default class Sample {
     this.RENDER_INTERVAL = 30;
     this.TICK_INTERVAL = 1500;
     
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
+    this.width = opts.width || window.innerWidth;
+    this.height = opts.height || window.innerHeight;
     this.container = opts.container || document.createElement('div');
     
     this.init();
@@ -53,6 +53,15 @@ export default class Sample {
       const cube = new THREE.Mesh(geometry, material);
       this.scene.add(cube);
     }
+  }
+
+  setSize(width, height) {
+    if (!width || !height) return;
+    this.width = width;
+    this.height = height;
+    this.camera.aspect = this.width / this.height;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize( this.width, this.height );
   }
 
   tick() {
