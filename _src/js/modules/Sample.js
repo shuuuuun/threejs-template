@@ -55,6 +55,17 @@ export default class Sample {
     }
   }
 
+  tick() {
+  }
+
+  render() {
+    this.renderer.render( this.scene, this.camera );
+  }
+
+  stop() {
+    cancelAnimationFrame(this.loopId);
+  }
+
   start() {
     const startTime = Date.now();
     let previousTime = startTime;
@@ -83,16 +94,5 @@ export default class Sample {
     };
     
     loop();
-  }
-
-  stop() {
-    cancelAnimationFrame(this.loopId);
-  }
-
-  tick() {
-  }
-
-  render() {
-    this.renderer.render( this.scene, this.camera );
   }
 }
