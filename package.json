@@ -37,6 +37,7 @@
     "koko": "latest",
     "read-config": "latest",
     "reset-css": "latest",
+    "three": "^0.81.0",
     "vinyl-buffer": "latest",
     "vinyl-source-stream": "latest"
   },
